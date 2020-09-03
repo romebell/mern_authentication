@@ -8,8 +8,8 @@ const passport = require('passport');
 const JWT_SECRET = process.env.JWT_SECRET;
 console.log(process.env);
 // Load User model
-const User = require('../../models/User');
-console.log(User);
+// const User = require('../../models/User');
+const db = require('../../models');
 
 // GET api/users/test (Public)
 router.get('/test', (req, res) => {
@@ -20,7 +20,7 @@ router.get('/test', (req, res) => {
 router.post('/register', (req, res) => {
   
   // Find user by email
-  User.findOne({ email: req.body.email })
+  db.User.findOne({ email: req.body.email })
   .then(user => {
     // if email already exists, send a 400 response
     if (user) {
