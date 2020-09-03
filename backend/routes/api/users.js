@@ -48,6 +48,7 @@ router.post('/register', (req, res) => {
   })
 });
 
+// POST api/users/login (Public)
 router.post('/login', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
@@ -79,6 +80,15 @@ router.post('/login', (req, res) => {
         }
       });
     }
+  });
+});
+
+// GET api/users/current (Private)
+router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+  res.json({
+    id: req.user.id,
+    name: req.user.name,
+    email: req.user.email
   });
 });
 
