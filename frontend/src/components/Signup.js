@@ -48,7 +48,7 @@ const Signup = () => {
             <div className="col-md-7 offset-md-3">
                 <div className="card card-body">
                     <h2 className="py-2">Signup</h2>
-                    <form action="/ideas" method="POST" onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="name">Name</label>
                             <input type="text" name="name" value={name} onChange={handleName} className="form-control"/>

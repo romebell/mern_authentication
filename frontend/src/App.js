@@ -61,7 +61,7 @@ function App() {
           <Route path="/signup" component={ Signup } />
           <Route 
             path="/login" 
-            render={ (props) => <Login {...props} setCurrentUser={setCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} 
+            render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} 
           />
           <Route path="/about" component={ About } />
           {/* <PrivateRoute path="/profile" component={ Profile } user={currentUser} /> */}
