@@ -1,1 +1,1 @@
-# mern_authenication
+# MERN Authentication
